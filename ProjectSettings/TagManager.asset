@@ -1,0 +1,315 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bullet
+  - powerup_shield
+  - PowerUp
+  - powerup_fourshots
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Post Processing
+  - 
+  - 
+  - 
+  - Characters
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: dzly 1.1
+    uniqueID: 1568227691
+    locked: 0
+  - name: dzly 1.2
+    uniqueID: 2208962065
+    locked: 0
+  - name: dzly 1.3
+    uniqueID: 1836763459
+    locked: 0
+  - name: dzly 1.4
+    uniqueID: 3317984417
+    locked: 0
+  - name: dzly 1.5
+    uniqueID: 1684083045
+    locked: 0
+  - name: dzly 1.6
+    uniqueID: 562126677
+    locked: 0
+  - name: dzly 1.7
+    uniqueID: 2787484895
+    locked: 0
+  - name: dzly 1.8
+    uniqueID: 3889148409
+    locked: 0
+  - name: dzly 1.9
+    uniqueID: 2198382605
+    locked: 0
+  - name: dzly 2.1
+    uniqueID: 2283849891
+    locked: 0
+  - name: dzly 2.2
+    uniqueID: 2692523103
+    locked: 0
+  - name: dzly 2.3
+    uniqueID: 3292977369
+    locked: 0
+  - name: dzly 2.4
+    uniqueID: 1359008871
+    locked: 0
+  - name: dzly 2.5
+    uniqueID: 3086338675
+    locked: 0
+  - name: dzly 2.6
+    uniqueID: 1133630409
+    locked: 0
+  - name: dzly 2.7
+    uniqueID: 939993793
+    locked: 0
+  - name: dzly 2.8
+    uniqueID: 2988769321
+    locked: 0
+  - name: dzly 2.9
+    uniqueID: 2041908377
+    locked: 0
+  - name: dzly 3.1
+    uniqueID: 773250457
+    locked: 0
+  - name: dzly 3.2
+    uniqueID: 2778325341
+    locked: 0
+  - name: dzly 3.3
+    uniqueID: 846533895
+    locked: 0
+  - name: dzly 3.4
+    uniqueID: 1229506533
+    locked: 0
+  - name: dzly 3.5
+    uniqueID: 1347751729
+    locked: 0
+  - name: dzly 3.6
+    uniqueID: 2450927027
+    locked: 0
+  - name: dzly 3.7
+    uniqueID: 4127678249
+    locked: 0
+  - name: dzly 3.8
+    uniqueID: 1814457745
+    locked: 0
+  - name: dzly 3.9
+    uniqueID: 2585054611
+    locked: 0
+  - name: dzly 4.1
+    uniqueID: 1501037475
+    locked: 0
+  - name: dzly 4.2
+    uniqueID: 1233008589
+    locked: 0
+  - name: dzly 4.3
+    uniqueID: 1196560629
+    locked: 0
+  - name: dzly 4.4
+    uniqueID: 2506503829
+    locked: 0
+  - name: dzly 4.5
+    uniqueID: 4244519835
+    locked: 0
+  - name: dzly 4.6
+    uniqueID: 1547222959
+    locked: 0
+  - name: dzly 4.7
+    uniqueID: 2735388361
+    locked: 0
+  - name: dzly 4.8
+    uniqueID: 3006730999
+    locked: 0
+  - name: dzly 4.9
+    uniqueID: 1503619395
+    locked: 0
+  - name: dzly 5.1
+    uniqueID: 543240399
+    locked: 0
+  - name: dzly 5.2
+    uniqueID: 1629665795
+    locked: 0
+  - name: dzly 5.3
+    uniqueID: 128941089
+    locked: 0
+  - name: dzly 5.4
+    uniqueID: 125760671
+    locked: 0
+  - name: dzly 5.5
+    uniqueID: 4033407903
+    locked: 0
+  - name: dzly 5.6
+    uniqueID: 3830352981
+    locked: 0
+  - name: dzly 5.7
+    uniqueID: 2169474371
+    locked: 0
+  - name: dzly 5.8
+    uniqueID: 4179629619
+    locked: 0
+  - name: dzly 5.9
+    uniqueID: 1619735165
+    locked: 0
+  - name: dzly 6.1
+    uniqueID: 1376328987
+    locked: 0
+  - name: dzly 6.2
+    uniqueID: 3967810041
+    locked: 0
+  - name: dzly 6.3
+    uniqueID: 3501186473
+    locked: 0
+  - name: dzly 6.4
+    uniqueID: 3971549675
+    locked: 0
+  - name: dzly 6.5
+    uniqueID: 3553455547
+    locked: 0
+  - name: dzly 6.7
+    uniqueID: 3202920125
+    locked: 0
+  - name: dzly 6.8
+    uniqueID: 2542076155
+    locked: 0
+  - name: dzly 6.9
+    uniqueID: 928643025
+    locked: 0
+  - name: dzly 7.1
+    uniqueID: 2673013005
+    locked: 0
+  - name: dzly 7.2
+    uniqueID: 2867407219
+    locked: 0
+  - name: dzly 7.3
+    uniqueID: 3354168725
+    locked: 0
+  - name: dzly 7.4
+    uniqueID: 2672533637
+    locked: 0
+  - name: dzly 7.5
+    uniqueID: 3914290215
+    locked: 0
+  - name: dzly 7.6
+    uniqueID: 2993146977
+    locked: 0
+  - name: dzly 7.7
+    uniqueID: 1850219329
+    locked: 0
+  - name: dzly 7.8
+    uniqueID: 142974569
+    locked: 0
+  - name: dzly 7.9
+    uniqueID: 2531781109
+    locked: 0
+  - name: dzly 8.1
+    uniqueID: 1085256717
+    locked: 0
+  - name: dzly 8.2
+    uniqueID: 573779431
+    locked: 0
+  - name: dzly 8.3
+    uniqueID: 2102804091
+    locked: 0
+  - name: dzly 8.4
+    uniqueID: 212007049
+    locked: 0
+  - name: dzly 8.5
+    uniqueID: 913765229
+    locked: 0
+  - name: dzly 8.6
+    uniqueID: 3889277567
+    locked: 0
+  - name: dzly 8.7
+    uniqueID: 86226697
+    locked: 0
+  - name: dzly 8.8
+    uniqueID: 2345408797
+    locked: 0
+  - name: dzly 8.9
+    uniqueID: 3555855147
+    locked: 0
+  - name: dzly 9.1
+    uniqueID: 674272783
+    locked: 0
+  - name: dzly 9.2
+    uniqueID: 686838109
+    locked: 0
+  - name: dzly 9.3
+    uniqueID: 2031550915
+    locked: 0
+  - name: dzly 9.4
+    uniqueID: 1935468389
+    locked: 0
+  - name: dzly 9.5
+    uniqueID: 1036198443
+    locked: 0
+  - name: dzly 9.6
+    uniqueID: 1081552593
+    locked: 0
+  - name: dzly 9.7
+    uniqueID: 3222127177
+    locked: 0
+  - name: dzly 9.8
+    uniqueID: 2770192141
+    locked: 0
+  - name: dzly 9.9
+    uniqueID: 1667596467
+    locked: 0
+  - name: dzly 1.10
+    uniqueID: 3614540883
+    locked: 0
+  - name: dzly 2.10
+    uniqueID: 706373567
+    locked: 0
+  - name: dzly 3.10
+    uniqueID: 2323905795
+    locked: 0
+  - name: dzly 4.10
+    uniqueID: 1483224667
+    locked: 0
+  - name: dzly 5.10
+    uniqueID: 2771513327
+    locked: 0
+  - name: dzly 6.10
+    uniqueID: 2334036459
+    locked: 0
+  - name: dzly 7.10
+    uniqueID: 3953480983
+    locked: 0
+  - name: dzly 8.10
+    uniqueID: 4287403175
+    locked: 0
+  - name: dzly 9.10
+    uniqueID: 3852129957
+    locked: 0

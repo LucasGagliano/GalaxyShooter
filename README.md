@@ -1,2 +1,2 @@
-# GalaxyShooter
- A galaxy shooter project developed with the intetion of studying Unity's methods and codes
+# Galaxy Shooter
+ A galaxy shooter project developed with the intention of studying unity's methods and codes

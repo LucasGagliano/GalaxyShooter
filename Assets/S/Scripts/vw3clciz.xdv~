@@ -1,0 +1,155 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerBehaviour : MonoBehaviour
+{
+    #region Variables
+    [Header("Player Variables", order = 0)]
+
+    [Header("Player Atributtes", order = 1)]
+    [SerializeField] private float _movimentForce;
+    [SerializeField] private float _shootRatio;
+    [HideInInspector] public bool affectedByPowerUp;
+
+    [Header("Player Controlled Objects", order = 2)]
+    [SerializeField] private GameObject[] _frontGuns;
+    [SerializeField] private GameObject[] _backGuns;
+    [SerializeField] private BulletBehavior _laserBullet;
+    [SerializeField] private AudioSource _laserBulletFX;
+    [SerializeField] private AudioSource _engineFX;
+    [SerializeField] private GameObject _shield;
+
+    [Header("External References", order = 3)]
+    [SerializeField] private LevelManager _thisLevelManager;
+
+    bool _canShoot;
+    bool _fourShots;
+    #endregion
+
+    #region Unity Methods
+    private void Awake()
+    {
+        _canShoot = true;
+
+        _laserBulletFX = GameObject.Find("fxLaserShot").GetComponent<AudioSource>();
+        _engineFX = GameObject.Find("fxEngine").GetComponent<AudioSource>();
+
+        _thisLevelManager = FindObjectOfType<LevelManager>();
+    }
+
+    private void Start()
+    {
+        _engineFX.Play();
+        _engineFX.loop = true;
+    }
+
+    void Update()
+    {
+        if (!_thisLevelManager.isCutSceneHappening)
+            if (_canShoot)
+                Shoot();
+    }
+
+    private void FixedUpdate()
+    {
+        if(!_thisLevelManager.isCutSceneHappening)
+            Move();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("PowerUp"))
+            StartCoroutine(IsAffectedByPowerUp(collider.gameObject.transform.GetChild(0).tag));
+
+        if (collider.CompareTag("Bullet"))
+        {
+            else if (!collider.gameObject.transform.parent.transform.parent == this)
+                if (_shield.active)
+                    _shield.SetActive(false);
+                else
+                    Destroy(this.gameObject);
+        }
+    }
+    #endregion
+
+    #region Personalized Methods
+    private void Move()
+    {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        Vector3 horizontalDirection, verticalDirection;
+
+        horizontalDirection = (h > 0) ? new Vector3(1, 0, 0) : new Vector3(-1, 0, 0);
+        verticalDirection = (v > 0) ? new Vector3(0, 1, 0) : new Vector3(0, -1, 0);
+
+        if (Input.GetButton("Horizontal"))
+            transform.Translate(horizontalDirection * _movimentForce * Time.deltaTime * 1);
+
+        if (Input.GetButton("Vertical"))
+            transform.Translate(verticalDirection * _movimentForce * Time.deltaTime * 1);
+    }
+
+    private void Shoot()
+    {
+        if (Input.GetButton("Shoot"))
+        {
+            _canShoot = false;
+
+            if (!_fourShots)
+                foreach (GameObject gun in _frontGuns)
+                {
+                    BulletBehavior _laserBulletInstance = Instantiate(_laserBullet, gun.transform, false);
+                    _laserBulletInstance.transform.position = new Vector3(gun.transform.position.x, gun.transform.position.y, gun.transform.parent.position.z);
+                }
+            else
+            {
+                foreach (GameObject gun in _frontGuns)
+                {
+                    BulletBehavior _laserBulletInstance = Instantiate(_laserBullet, gun.transform, false);
+                    _laserBulletInstance.transform.position = new Vector3(gun.transform.position.x, gun.transform.position.y, gun.transform.parent.position.z);
+                }
+                foreach (GameObject gun in _backGuns)
+                {
+                    BulletBehavior _laserBulletInstance = Instantiate(_laserBullet, gun.transform, false);
+                    _laserBulletInstance.transform.position = new Vector3(gun.transform.position.x, gun.transform.position.y, gun.transform.parent.position.z);
+                }
+            }
+
+            _laserBulletFX.Play();
+            StartCoroutine(CanShoot());
+        }
+    }
+
+    private IEnumerator CanShoot()
+    {
+        yield return new WaitForSeconds(_shootRatio);
+        _canShoot = true;
+        StopCoroutine(CanShoot());
+    }
+
+    private IEnumerator IsAffectedByPowerUp(string objectID)
+    {
+        affectedByPowerUp = true;
+
+        switch (objectID)
+        {
+            case "powerup_fourshots":
+                _fourShots = true;
+                yield return new WaitForSeconds(15f);
+                _fourShots = false;
+                break;
+
+            case "powerup_shield":
+                _shield.SetActive(true);
+                yield return new WaitForSeconds(15f);
+                _shield.SetActive(false);
+                break;
+        }
+
+        StopCoroutine(IsAffectedByPowerUp(objectID));
+        affectedByPowerUp = false;
+    }
+    #endregion
+}
